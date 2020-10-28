@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class RoomManager : MonoBehaviour
 {
+    //Note, yang ini belum kuoptimize dan masih berantakan. Nanti kuberesin
     public static RoomManager Instance;
 
     [SerializeField] private Vector2Int roomSize;
