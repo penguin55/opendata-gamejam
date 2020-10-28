@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8807386936244662598}
   - component: {fileID: 8807386936244662592}
-  - component: {fileID: 4195941558505049247}
+  - component: {fileID: 2005874786036341393}
   m_Layer: 0
   m_Name: TWOverlay
   m_TagString: Untagged
@@ -82,7 +82,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &4195941558505049247
+--- !u!114 &2005874786036341393
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -91,8 +91,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 8807386936244662599}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: be20286552920424fab0ba699be900ad, type: 3}
+  m_Script: {fileID: 11500000, guid: c5941b4b4b34bb74f8bb6eadd9a8528e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   timeToFade: 1
-  baseColor: {r: 0, g: 0, b: 0, a: 1}
+  baseColor: {r: 0, g: 0, b: 0, a: 0}
