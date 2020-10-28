@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class CharaBehaviour : MonoBehaviour
 {
+    [SerializeField] protected Vector2 direction;
+
+    [SerializeField] protected float speed;
+
     // Start is called before the first frame update
     void Start()
     {
