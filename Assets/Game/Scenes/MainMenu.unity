@@ -156,8 +156,8 @@ Camera:
   m_GameObject: {fileID: 132223602}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_ClearFlags: 2
+  m_BackGroundColor: {r: 0.09632976, g: 0.083437175, b: 0.23584908, a: 1}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -178,13 +178,13 @@ Camera:
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 288
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
-  m_TargetEye: 3
+  m_TargetEye: 0
   m_HDR: 1
-  m_AllowMSAA: 1
+  m_AllowMSAA: 0
   m_AllowDynamicResolution: 0
   m_ForceIntoRT: 0
   m_OcclusionCulling: 1
@@ -212,6 +212,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 132223605}
     m_Modifications:
+    - target: {fileID: 8807386936244662592, guid: 671dbab9ded59c643b33453a94595a9c,
+        type: 3}
+      propertyPath: m_SortingLayerID
+      value: -617688283
+      objectReference: {fileID: 0}
+    - target: {fileID: 8807386936244662592, guid: 671dbab9ded59c643b33453a94595a9c,
+        type: 3}
+      propertyPath: m_SortingLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8807386936244662592, guid: 671dbab9ded59c643b33453a94595a9c,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8807386936244662598, guid: 671dbab9ded59c643b33453a94595a9c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1230,6 +1245,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 132548390099989727, guid: 087abf340df062845ac169c0042329c0,
+        type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 5480932299268308105, guid: 087abf340df062845ac169c0042329c0,
         type: 3}
       propertyPath: m_Name
