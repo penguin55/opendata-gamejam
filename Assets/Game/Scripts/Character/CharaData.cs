@@ -2,10 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CharaBehaviour : MonoBehaviour
+public class CharaData : MonoBehaviour
 {
-    [SerializeField] protected CharaData data;
-    [SerializeField] protected Vector2 direction;
+    [SerializeField] private float speed, hp;
+
+    public float Speed { get => speed; set => speed = value; }
+    public float Hp { get => hp; set => hp = value; }
 
     // Start is called before the first frame update
     void Start()

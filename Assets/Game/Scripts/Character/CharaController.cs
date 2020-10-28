@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class CharaController : CharaBehaviour
 {
-    public KeyCode moveUp;
-    public KeyCode moveDown;
-    public KeyCode moveRight;
-    public KeyCode moveLeft;
+    [SerializeField] private KeyCode moveUp;
+    [SerializeField] private KeyCode moveDown;
+    [SerializeField] private KeyCode moveRight;
+    [SerializeField] private KeyCode moveLeft;
 
 
     // Start is called before the first frame update
@@ -43,6 +43,6 @@ public class CharaController : CharaBehaviour
             direction = Vector2.right;
         }
 
-        transform.Translate(direction * speed * Time.deltaTime);
+        transform.Translate(direction * data.Speed * Time.deltaTime);
     }
 }
