@@ -7,7 +7,11 @@ public class CharaBehaviour : MonoBehaviour
     [SerializeField] protected CharaData data;
     [SerializeField] protected Vector2 direction;
 
-    // Start is called before the first frame update
+    public void Init()
+    {
+        data.Hp = 100;
+    }
+
     void Start()
     {
         

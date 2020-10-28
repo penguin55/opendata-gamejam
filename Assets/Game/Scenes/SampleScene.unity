@@ -216,6 +216,7 @@ GameObject:
   - component: {fileID: 1683682978}
   - component: {fileID: 1683682980}
   - component: {fileID: 1683682977}
+  - component: {fileID: 1683682981}
   m_Layer: 0
   m_Name: New Sprite
   m_TagString: Untagged
@@ -235,8 +236,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da52228125966294cbbb3d5e09e61efb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  data: {fileID: 1683682981}
   direction: {x: 0, y: 0}
-  speed: 100
   moveUp: 119
   moveDown: 115
   moveRight: 100
@@ -326,6 +327,20 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &1683682981
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1683682976}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fd8f15d1aac73341b602c3fddeff4d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 10
+  hp: 0
 --- !u!1 &1985163871
 GameObject:
   m_ObjectHideFlags: 0
