@@ -4,15 +4,11 @@ using UnityEngine;
 
 public class RoomTemplate : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] private Room[] rooms;
 
-    // Update is called once per frame
-    void Update()
+    public Room GetRandomRoom()
     {
-        
+        int randomPick = Random.Range(0, rooms.Length);
+        return rooms[randomPick];
     }
 }
