@@ -91,13 +91,13 @@ public class CharaBehaviour : MonoBehaviour
 
     public void TakeDamage()
     {
-        if (playerData.hp >= 1)
+        if (data.Hp >= 1)
         {
             
-            playerData.hp -= 1;
-            InGameUIManager.instance.uilive();
+            data.Hp -= 1;
+            //InGameUIManager.instance.uilive();
 
-            if (playerData.hp < 1)
+            if (data.Hp < 1)
             {
                 dead = true;
             }
