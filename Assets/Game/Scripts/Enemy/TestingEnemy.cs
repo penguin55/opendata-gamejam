@@ -24,20 +24,22 @@ public class TestingEnemy : MonoBehaviour
     {
         if (collision.tag == "Player")
         {
-
+            player = collision.gameObject;
             if (Data.instance.Character.PlayerDashing())
             {
                 Debug.Log("Enemy Stun!");
+                StartCoroutine(StopAttack());
             }
 
             if (!Data.instance.Character.PlayerDashing())
             {
                 insight = true;
-                player = collision.gameObject;
+               
             }
 
         }
     }
+
 
     private void OnTriggerExit2D(Collider2D collision)
     {
@@ -68,7 +70,7 @@ public class TestingEnemy : MonoBehaviour
     IEnumerator StopAttack()
     {
         insight = false;
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(2f);
         insight = true;
     }
 
