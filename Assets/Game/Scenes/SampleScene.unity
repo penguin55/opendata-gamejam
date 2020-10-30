@@ -238,6 +238,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   data: {fileID: 1683682981}
   direction: {x: 0, y: 0}
+  lastDirection: {x: 0, y: 0}
+  startDashTime: 0.1
+  dashTime: 0
+  dashDelay: 1
+  rb: {fileID: 0}
+  timeMoveElapsed: 0
+  isAccelerating: 0
+  timeToStop: 0.2
   moveUp: 119
   moveDown: 115
   moveRight: 100
@@ -339,7 +347,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6fd8f15d1aac73341b602c3fddeff4d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
+  speed: 5
+  dashSpeed: 50
   hp: 0
 --- !u!1 &1985163871
 GameObject:
