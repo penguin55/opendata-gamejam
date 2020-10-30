@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -8,13 +9,15 @@ public class CharaBehaviour : MonoBehaviour
     [SerializeField] protected Vector2 direction, lastDirection;
     [SerializeField] protected float startDashTime, dashTime;
 
-    protected bool isDashed, canDash;
+    protected bool isDashed, canDash, dead, insight = false;
     [SerializeField] protected float dashDelay;
     [SerializeField] protected Rigidbody2D rb;
 
     [SerializeField] protected float timeMoveElapsed;
     [SerializeField] protected bool isAccelerating;
     [SerializeField] protected float timeToStop;
+
+    private GameObject enemy;
 
     public void Init()
     {
@@ -76,5 +79,55 @@ public class CharaBehaviour : MonoBehaviour
         canDash = true;
     }
 
+    public void TakeDamage()
+    {
+        if (playerData.hp >= 1)
+        {
+            
+            playerData.hp -= 1;
+            InGameUIManager.instance.uilive();
+
+            if (playerData.hp < 1)
+            {
+                dead = true;
+            }
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.gameObject.tag == "Enemy")
+        {
+            enemy = collision.gameObject;
+            insight = true;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        enemy = null;
+        insight = false;
+    }
+
+    public void Detect(bool insight)
+    {
+        if (insight)
+        {
+            double distance = Math.Sqrt(Math.Pow(this.transform.position.x - enemy.transform.position.x, 2)
+            + Math.Pow(this.transform.position.y - enemy.transform.position.y, 2));
+
+            Debug.Log("distance : " + distance);
+            if (distance < 3)
+            {
+                StartCoroutine(Damage());
+            }
+        }
+    }
+
+    IEnumerator Damage()
+    {
+        TakeDamage();
+        yield return new WaitForSeconds(3f);
+    }
 
 }

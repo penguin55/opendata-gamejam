@@ -19,11 +19,11 @@ public class CharaController : CharaBehaviour
     // Update is called once per frame
     void Update()
     {
+        Detect(insight);
         Dash();
         KeyboardMovement();
         Action();
     }
-
     public void KeyboardMovement()
     {
         direction = Vector2.zero;
