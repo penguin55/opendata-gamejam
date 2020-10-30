@@ -79,6 +79,11 @@ public class CharaBehaviour : MonoBehaviour
         canDash = true;
     }
 
+    public bool PlayerDashing()
+    {
+        return data.IsDashing;
+    }
+
     public void Stun()
     {
         //Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayer);
