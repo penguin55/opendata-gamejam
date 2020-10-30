@@ -101,7 +101,7 @@ public class CharaBehaviour : MonoBehaviour
         {
             
             data.Hp -= 1;
-            //InGameUIManager.instance.uilive();
+            InGameUIManager.instance.uilive();
 
             if (data.Hp < 1)
             {

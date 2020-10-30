@@ -72,10 +72,10 @@ public class InGameUIManager : MonoBehaviour
     public void uilive()
     {
         int i = 0;
-        while (i < playerData.maxhp)
+        while (i < CharaData.maxhp)
         {
             hearts[i].SetActive(true);
-            if (i < playerData.hp)
+            if (i < CharaData.hp)
             {
                 hearts[i].GetComponent<Image>().overrideSprite = oldsprite;
             }

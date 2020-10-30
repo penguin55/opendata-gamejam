@@ -1372,6 +1372,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09a5fc4d33a045f4a8d284734f735115, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  insight: 0
+  player: {fileID: 0}
 --- !u!1 &1231677874
 GameObject:
   m_ObjectHideFlags: 0
@@ -1743,8 +1745,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   dashSpeed: 50
-  hp: 3
-  maxhp: 3
 --- !u!61 &1683682982
 BoxCollider2D:
   m_ObjectHideFlags: 0

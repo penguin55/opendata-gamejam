@@ -5,7 +5,9 @@ using UnityEngine;
 public class CharaData : MonoBehaviour
 {
    private bool isDashing;
-   [SerializeField]private float speed, dashSpeed,hp=3, maxhp=3;
+   [SerializeField]private float speed, dashSpeed;
+
+    public static  float hp = 3, maxhp = 3;
 
     public bool IsDashing { get => isDashing; set => isDashing = value; }
     public float DashSpeed { get => dashSpeed; set => dashSpeed = value; }
