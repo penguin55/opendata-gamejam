@@ -28,7 +28,7 @@ public class TestingEnemy : MonoBehaviour
             if (Data.instance.Character.PlayerDashing())
             {
                 Debug.Log("Enemy Stun!");
-                StartCoroutine(StopAttack());
+                StartCoroutine(DelayAttack());
             }
 
             if (!Data.instance.Character.PlayerDashing())
@@ -57,11 +57,9 @@ public class TestingEnemy : MonoBehaviour
             double distance = Math.Sqrt(Math.Pow(player.transform.position.x - this.transform.position.x, 2)
                     + Math.Pow(player.transform.position.y - this.transform.position.y, 2));
 
-            Debug.Log(distance);
 
             if (distance < 4 && insight)
             {
-                player.GetComponent<CharaBehaviour>().TakeDamage();
                 StartCoroutine(StopAttack());
             }
         }
@@ -69,9 +67,18 @@ public class TestingEnemy : MonoBehaviour
 
     IEnumerator StopAttack()
     {
+        player.GetComponent<CharaBehaviour>().TakeDamage();
         insight = false;
         yield return new WaitForSeconds(2f);
         insight = true;
     }
 
+    IEnumerator DelayAttack()
+    {
+        insight = false;
+        yield return new WaitForSeconds(2f);
+        insight = true;
+    }
 }
+
+
