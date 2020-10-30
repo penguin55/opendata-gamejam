@@ -128,6 +128,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 132223605}
     m_Modifications:
+    - target: {fileID: 2005874786036341393, guid: 671dbab9ded59c643b33453a94595a9c,
+        type: 3}
+      propertyPath: baseColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8807386936244662592, guid: 671dbab9ded59c643b33453a94595a9c,
+        type: 3}
+      propertyPath: m_SortingLayerID
+      value: -617688283
+      objectReference: {fileID: 0}
+    - target: {fileID: 8807386936244662592, guid: 671dbab9ded59c643b33453a94595a9c,
+        type: 3}
+      propertyPath: m_SortingLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8807386936244662592, guid: 671dbab9ded59c643b33453a94595a9c,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8807386936244662598, guid: 671dbab9ded59c643b33453a94595a9c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -284,7 +304,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 132223602}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.91, y: 2.57, z: -10}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 8068225}
@@ -1225,6 +1245,11 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 132223604}
+    - target: {fileID: 132548390099989727, guid: 087abf340df062845ac169c0042329c0,
+        type: 3}
+      propertyPath: m_SortingLayerID
+      value: -617688283
+      objectReference: {fileID: 0}
     - target: {fileID: 5480932299268308105, guid: 087abf340df062845ac169c0042329c0,
         type: 3}
       propertyPath: m_Name
