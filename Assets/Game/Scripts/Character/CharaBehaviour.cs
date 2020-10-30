@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -8,7 +9,7 @@ public class CharaBehaviour : MonoBehaviour
     [SerializeField] protected Vector2 direction, lastDirection;
     [SerializeField] protected float startDashTime, dashTime;
 
-    protected bool isDashed, canDash;
+    protected bool isDashed, canDash, dead, insight = false;
     [SerializeField] protected float dashDelay;
     [SerializeField] protected Rigidbody2D rb;
 
@@ -16,9 +17,11 @@ public class CharaBehaviour : MonoBehaviour
     [SerializeField] protected bool isAccelerating;
     [SerializeField] protected float timeToStop;
 
+    private GameObject enemy;
+
+
     public void Init()
     {
-        data.Hp = 100;
         canDash = true;
         Time.timeScale = 1f;
         rb = GetComponent<Rigidbody2D>();
@@ -78,19 +81,63 @@ public class CharaBehaviour : MonoBehaviour
 
     public void Stun()
     {
-        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
+        //Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayer);
 
-        foreach (Collider2D enemy in hitEnemies)
+        //foreach (Collider2D enemy in hitEnemies)
+        //{
+        //    Debug.Log("Enemy Hit!");
+        //}
+    }
+
+    public void TakeDamage()
+    {
+        if (playerData.hp >= 1)
         {
-            Debug.Log("Enemy Hit!");
+            
+            playerData.hp -= 1;
+            InGameUIManager.instance.uilive();
+
+            if (playerData.hp < 1)
+            {
+                dead = true;
+            }
         }
     }
 
-    private void OnDrawGizmosSelected()
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (attackPoint == null) return;
+        if(collision.gameObject.tag == "Enemy")
+        {
+            enemy = collision.gameObject;
+            insight = true;
+        }
+    }
 
-        Gizmos.DrawWireSphere(attackPoint.position, attackRange);
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        enemy = null;
+        insight = false;
+    }
+
+    public void Detect(bool insight)
+    {
+        if (insight)
+        {
+            double distance = Math.Sqrt(Math.Pow(this.transform.position.x - enemy.transform.position.x, 2)
+            + Math.Pow(this.transform.position.y - enemy.transform.position.y, 2));
+
+            Debug.Log("distance : " + distance);
+            if (distance < 3)
+            {
+                StartCoroutine(Damage());
+            }
+        }
+    }
+
+    IEnumerator Damage()
+    {
+        TakeDamage();
+        yield return new WaitForSeconds(3f);
     }
 
 }
