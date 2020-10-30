@@ -1550,9 +1550,9 @@ GameObject:
   - component: {fileID: 1683682979}
   - component: {fileID: 1683682978}
   - component: {fileID: 1683682980}
+  - component: {fileID: 1683682982}
   - component: {fileID: 1683682977}
   - component: {fileID: 1683682981}
-  - component: {fileID: 1683682982}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -1582,10 +1582,16 @@ MonoBehaviour:
   timeMoveElapsed: 0
   isAccelerating: 0
   timeToStop: 0.2
+  attackPoint: {fileID: 0}
+  attackRange: 0
+  enemyLayer:
+    serializedVersion: 2
+    m_Bits: 0
   moveUp: 119
   moveDown: 115
   moveRight: 100
   moveLeft: 97
+  dash: 101
 --- !u!212 &1683682978
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1743,16 +1749,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseMenuUI: {fileID: 685950666}
-  hearts:
-  - {fileID: 1860103013}
-  - {fileID: 920753612}
-  - {fileID: 358743988}
-  - {fileID: 544385129}
-  - {fileID: 1460507469}
-  newsprite: {fileID: -7054688187978672202, guid: bd8be9c6a35a11d48add52bcfb4e8a4f,
-    type: 3}
-  oldsprite: {fileID: 822504558703882474, guid: bd8be9c6a35a11d48add52bcfb4e8a4f,
-    type: 3}
+  hearts: []
+  newsprite: {fileID: 0}
+  oldsprite: {fileID: 0}
 --- !u!4 &1810792072
 Transform:
   m_ObjectHideFlags: 0

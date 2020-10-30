@@ -10,7 +10,6 @@ public class CharaController : CharaBehaviour
     [SerializeField] private KeyCode moveRight;
     [SerializeField] private KeyCode moveLeft;
     [SerializeField] private KeyCode dash;
-    [SerializeField] private KeyCode attack;
 
 
     // Start is called before the first frame update
@@ -110,11 +109,5 @@ public class CharaController : CharaBehaviour
                 canDash = false;
             }
         }
-
-        if (Input.GetKeyDown(attack))
-        {
-            Stun();
-        }
-       
     }
 }
