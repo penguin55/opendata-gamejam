@@ -21,7 +21,6 @@ public class CharaController : CharaBehaviour
     // Update is called once per frame
     void Update()
     {
-        Detect(insight);
         Dash();
         KeyboardMovement();
         Action();
