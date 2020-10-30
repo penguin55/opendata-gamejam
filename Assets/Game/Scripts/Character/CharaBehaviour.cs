@@ -109,40 +109,40 @@ public class CharaBehaviour : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if(collision.gameObject.tag == "Enemy")
-        {
-            enemy = collision.gameObject;
-            insight = true;
-        }
-    }
+    //private void OnTriggerEnter2D(Collider2D collision)
+    //{
+    //    if(collision.gameObject.tag == "Enemy")
+    //    {
+    //        enemy = collision.gameObject;
+    //        insight = true;
+    //    }
+    //}
 
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        enemy = null;
-        insight = false;
-    }
+    //private void OnTriggerExit2D(Collider2D collision)
+    //{
+    //    enemy = null;
+    //    insight = false;
+    //}
 
-    public void Detect(bool insight)
-    {
-        if (insight)
-        {
-            double distance = Math.Sqrt(Math.Pow(this.transform.position.x - enemy.transform.position.x, 2)
-            + Math.Pow(this.transform.position.y - enemy.transform.position.y, 2));
+    //public void Detect(bool insight)
+    //{
+    //    if (insight)
+    //    {
+    //        double distance = Math.Sqrt(Math.Pow(this.transform.position.x - enemy.transform.position.x, 2)
+    //        + Math.Pow(this.transform.position.y - enemy.transform.position.y, 2));
 
-            Debug.Log("distance : " + distance);
-            if (distance < 3)
-            {
-                StartCoroutine(Damage());
-            }
-        }
-    }
+    //        Debug.Log("distance : " + distance);
+    //        if (distance < 3)
+    //        {
+    //            StartCoroutine(Damage());
+    //        }
+    //    }
+    //}
 
-    IEnumerator Damage()
-    {
-        TakeDamage();
-        yield return new WaitForSeconds(3f);
-    }
+    //IEnumerator Damage()
+    //{
+    //    TakeDamage();
+    //    yield return new WaitForSeconds(3f);
+    //}
 
 }
