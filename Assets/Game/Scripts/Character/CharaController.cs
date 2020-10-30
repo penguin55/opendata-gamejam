@@ -4,10 +4,13 @@ using UnityEngine;
 
 public class CharaController : CharaBehaviour
 {
+    [Header ("Input Controller")]
     [SerializeField] private KeyCode moveUp;
     [SerializeField] private KeyCode moveDown;
     [SerializeField] private KeyCode moveRight;
     [SerializeField] private KeyCode moveLeft;
+    [SerializeField] private KeyCode dash;
+    [SerializeField] private KeyCode attack;
 
 
     // Start is called before the first frame update
@@ -97,7 +100,7 @@ public class CharaController : CharaBehaviour
 
     public void Action()
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(dash))
         {
             if (canDash)
             {
@@ -106,6 +109,11 @@ public class CharaController : CharaBehaviour
                 data.IsDashing = true;
                 canDash = false;
             }
+        }
+
+        if (Input.GetKeyDown(attack))
+        {
+            Stun();
         }
        
     }
