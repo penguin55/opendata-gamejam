@@ -1801,9 +1801,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseMenuUI: {fileID: 685950666}
-  hearts: []
-  newsprite: {fileID: 0}
-  oldsprite: {fileID: 0}
+  hearts:
+  - {fileID: 1860103013}
+  - {fileID: 920753612}
+  - {fileID: 358743988}
+  - {fileID: 544385129}
+  - {fileID: 1460507469}
+  newsprite: {fileID: -7054688187978672202, guid: bd8be9c6a35a11d48add52bcfb4e8a4f,
+    type: 3}
+  oldsprite: {fileID: 822504558703882474, guid: bd8be9c6a35a11d48add52bcfb4e8a4f,
+    type: 3}
 --- !u!4 &1810792072
 Transform:
   m_ObjectHideFlags: 0
