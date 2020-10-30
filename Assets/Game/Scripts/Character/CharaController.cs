@@ -106,6 +106,7 @@ public class CharaController : CharaBehaviour
                 isDashed = true;
                 data.IsDashing = true;
                 canDash = false;
+                this.GetComponent<BoxCollider2D>().isTrigger = true;
             }
         }
     }

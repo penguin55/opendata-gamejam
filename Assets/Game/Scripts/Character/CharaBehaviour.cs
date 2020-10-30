@@ -63,6 +63,7 @@ public class CharaBehaviour : MonoBehaviour
                 rb.velocity = Vector2.zero;
                 isDashed = false;
                 data.IsDashing = false;
+                this.GetComponent<BoxCollider2D>().isTrigger = false;
                 StartCoroutine(Delay());
             }
             else
